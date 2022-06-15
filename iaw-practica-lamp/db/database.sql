@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 5.1.0
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 15-05-2021 a las 17:35:03
--- Versión del servidor: 10.4.18-MariaDB
--- Versión de PHP: 8.0.3
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -24,8 +15,6 @@ USE `lamp_db`;
 
 -- --------------------------------------------------------
 
-CREATE USER IF NOT EXISTS 'lamp_user'@'%';
-SET PASSWORD FOR 'lamp_user'@'%' = 'lamp_password';
 GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';
 
 --
