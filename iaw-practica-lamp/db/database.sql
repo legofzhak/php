@@ -11,8 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-CREATE DATABASE IF NOT EXISTS `AntonioGonzalezCapel`;
-USE `AntonioGonzalezCapel`;
+CREATE DATABASE IF NOT EXISTS `lamp_db`;
+USE `lamp_db`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -24,9 +24,15 @@ USE `AntonioGonzalezCapel`;
 
 -- --------------------------------------------------------
 
+CREATE USER IF NOT EXISTS 'lamp_user'@'%';
+SET PASSWORD FOR 'lamp_user'@'%' = 'lamp_password';
+GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';
+
 --
 -- Estructura de tabla para la tabla `carrito`
 --
+
+
 
 CREATE TABLE `carrito` (
   `productos_Codigo` int(11) NOT NULL,

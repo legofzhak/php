@@ -1,0 +1,52 @@
+version: '3.3'
+
+services:
+  apache:
+    build: ./apache
+    ports:
+      - 80:80
+    restart: always
+    networks:
+      - frontend_network
+      - backend_network
+    depends_on:
+      - mariadb
+    volumes:
+      - ./iaw-practica-lamp/src:/var/www/html
+
+  mariadb:
+    image: mariadb:10.4
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    restart: always
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./iaw-practica-lamp/db:/docker-entrypoint-initdb.d
+    networks:
+      - backend_network
+    security_opt:
+      - seccomp:unconfined
+      
+  phpmyadmin:
+    image: phpmyadmin:5
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=mariadb
+    depends_on:
+      - mariadb
+    networks:
+      - frontend_network
+      - backend_network
+
+ 
+volumes:
+  mariadb_data:
+
+networks:
+  frontend_network:
+  backend_network:
