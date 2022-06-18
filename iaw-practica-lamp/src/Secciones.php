@@ -30,12 +30,12 @@
 		echo "       ";
 		echo "<a href='VerFavoritos.php?login=$login&seccion=$seccion'>Ver Favoritos</a>";
 		echo "<br>";
-		echo "<a href='PaginaLogin.html'>Salir</a>";
+		echo "<a href='index.php'>Salir</a>";
 
 	}
 	else {
 		echo "<h1>Aún no existen categorías de esta sección</h1>"."</br>";
-		echo "<a href='PaginaLogin.html'>Salir</a>";
+		echo "<a href='index.php'>Salir</a>";
 	}
 
 $mysqli->close();

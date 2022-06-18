@@ -1,15 +1,15 @@
 <!DOCtype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<link href="homepage_style.css" type="text/css" rel="stylesheet"/>
+	<link href="./css/homepage_style.css" type="text/css" rel="stylesheet"/>
 
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 </head>
 <body>
     <?php
     include_once ('Conexion.php');
-    $login  = $_POST['login'];
-    $password  = $_POST['password'];
+    $login  = $_POST['nombre'];
+    $password  = $_POST['pass'];
 
     $cadenaSQL = "SELECT * FROM cliente WHERE login='$login' AND password='$password'";
 
@@ -30,19 +30,19 @@
                     echo "<td><h2>"."<a href = 'Secciones.php?seccion=$fila->IdSeccion&login=$login&password=$password'>" . $fila->Nombre . "</h2></a>";
                 }
                 echo "</table>";
-                echo "<h3><a href='PaginaLogin.html'>Salir</a></h3>";
+                echo "<h3><a href='index.php'>Salir</a></h3>";
                 
             }
             else 
             {
                 echo "<h1>Aún no existen secciones</h1>";
-                echo "<a href='PaginaLogin.html'>Salir</a>";
+                echo "<a href='login.php'>Salir</a>";
             }
         }
         else
         {
             echo "Datos incorrectos";
-            echo "<br><a href='PaginaLogin.html'>Salir</a></br>";
+            echo "<br><a href='index.php'>Salir</a></br>";
         }
 
     }

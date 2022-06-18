@@ -49,7 +49,7 @@
 		echo "       ";
 		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 		echo "<br>";
-		echo "<a href='PaginaLogin.html'>Salir</a>";
+		echo "<a href='index.php'>Salir</a>";
 
 	}
 	else {
