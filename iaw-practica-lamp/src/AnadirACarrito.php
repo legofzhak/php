@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-<link href="homepage_style.css" type="text/css" rel="stylesheet"/>
+<link href="/css/carrito_style.css" type="text/css" rel="stylesheet"/>
 <title>Añadir a Carrito</title>
 </head>
 <body>
 <?php
 
-include_once ('Conexion.php');
+include_once ('config.php');
 
 $seccion= $_GET['seccion'];
 $login = $_GET['login'];
@@ -32,7 +32,7 @@ $producto = $_GET['producto'];
 	echo	  "</tr>";
 	echo"</table>";
 	echo"</form>";
-	echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+	echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 ?>
 </body>
 </html>

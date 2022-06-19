@@ -8,7 +8,7 @@
 <body>
 <?php
 
-include_once ('Conexion.php');
+include_once ('config.php');
 
 $seccion= $_GET['seccion'];
 $login = $_GET['login'];
@@ -39,18 +39,18 @@ $cadenaSQL = "SELECT *
 			echo "<td>" . $fila->Descripcion; echo "</td>";
 			echo "<td>" .  $fila->Precio; echo "</td>";
 			echo "<td>" . $fila->Fabricante; echo "</td>";
-			echo "<td>" . "<a href='ProductoEliminadoFav.php?producto=$fila->Codigo&login=$login&seccion=$seccion'><input
+			echo "<td>" . "<a href='ProductoEliminado.php?producto=$fila->Codigo&login=$login&seccion=$seccion'><input
 					type='button' value='Eliminar Producto'> </a>"; echo "</td>";
 
 			echo "</tr>";
 
 		}
 		echo "</table>";
-		echo "<br><a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a><br/>";
+		echo "<br><a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a><br/>";
 	}
 	else {
 		echo "<h1>Aún no se han introducido favoritos</h1>";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 	}
 
 $mysqli->close();

@@ -1,13 +1,13 @@
 <!DOCtype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-	<link href="./css/homepage_style.css" type="text/css" rel="stylesheet"/>
-
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-</head>
+    <head>
+	    <link href="/css/logeo_style.css" type="text/css" rel="stylesheet"/>
+        <meta http-equiv="Content-type" content="text/html" >
+        <meta charset="UTF-8">
+    </head>
 <body>
     <?php
-    include_once ('Conexion.php');
+    include_once ('config.php');
     $login  = $_POST['nombre'];
     $password  = $_POST['pass'];
 
@@ -24,10 +24,10 @@
 
             if ($result){
                 
-                echo "<h1>Bienvenido, ".$login."</br></h1>";
-                echo "<table style='margin-left:auto;margin-right:auto;'>";
+                echo "<h1> Bienvenido ".$login.": Escoge una sección</br></h1>";
+                echo "<table>";
                  while ($fila = $result->fetch_object()) {
-                    echo "<td><h2>"."<a href = 'Secciones.php?seccion=$fila->IdSeccion&login=$login&password=$password'>" . $fila->Nombre . "</h2></a>";
+                    echo "<td><h2>"."<a href = 'secciones.php?seccion=$fila->IdSeccion&login=$login&password=$password'>" . $fila->Nombre . "</h2></a>";
                 }
                 echo "</table>";
                 echo "<h3><a href='index.php'>Salir</a></h3>";

@@ -43,7 +43,26 @@ services:
       - frontend_network
       - backend_network
 
- 
+
+https-portal:
+    image: steveltn/https-portal
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      #DOMAINS: 'localhost -> http://prestashop:80 #local'
+      DOMAINS: 'dk-zelk.ddns.net -> http://prestashop:8080 #production'
+    volumes:
+      - ssl_certs_data:/var/lib/https-portal
+    depends_on:
+      - prestashop
+    restart: always
+    networks:
+      - frontend_network
+
+
+
+
 volumes:
   mariadb_data:
 

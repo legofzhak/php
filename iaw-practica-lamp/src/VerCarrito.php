@@ -8,7 +8,7 @@
 <body>
 <?php
 
-include_once ('Conexion.php');
+include_once ('config.php');
 
 $seccion= $_GET['seccion'];
 $login = $_GET['login'];
@@ -46,12 +46,12 @@ $cadenaSQL = "SELECT *
 		echo "<br>";
 		echo "<a href='Comprar.php?login=$login&seccion=$seccion'>Comprar</a>";
 		echo "       ";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a><br/>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a><br/>";
 
 	}
 	else {
 		echo "<h1>Aún no se han introducido elementos en el carrito</h1>";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 	}
 
 $mysqli->close();

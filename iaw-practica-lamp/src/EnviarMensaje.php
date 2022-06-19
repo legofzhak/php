@@ -8,7 +8,7 @@
 <body>
 <?php
 
-include_once ('Conexion.php');
+include_once ('config.php');
 
     $nombreEmp=$_GET['nombreEmp'];
     $idCompras=$_GET['compra'];

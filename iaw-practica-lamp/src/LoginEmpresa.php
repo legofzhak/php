@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-    include_once ('Conexion.php');
+    include_once ('config.php');
     $login  = $_POST['login'];
     $password  = $_POST['password'];
 

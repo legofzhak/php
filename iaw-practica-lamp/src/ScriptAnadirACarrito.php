@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php
-	include_once ('Conexion.php');
+	include_once ('config.php');
 	$producto = $_GET['producto'];
 	$cantidad = $_GET['cantidad'];
 	$login = $_GET['login'];
@@ -24,18 +24,18 @@
 		if ($mysqli->affected_rows == 1)
 		{
 				echo "<h1>Producto añadido con éxito</h1>";
-				echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+				echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 		}
 		else 
 		{
 				echo "<h1>Producto no añadido</h1>";
-				echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+				echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 		}
 	}
 	else
 	{
 		echo "<h1>Producto no añadido</h1>";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 	}
 
 $mysqli->close();

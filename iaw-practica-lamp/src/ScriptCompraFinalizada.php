@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php
-	include_once ('Conexion.php');
+	include_once ('config.php');
     $idCompras = $_GET['compra'];
 	$fecha = date('y-m-d');
 

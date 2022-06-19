@@ -2,12 +2,12 @@
 <html>
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-<link href="homepage_style.css" type="text/css" rel="stylesheet"/>
+<link href="/css/categorias_style.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 	<?php
 	
-	include_once ('Conexion.php');
+	include_once ('config.php');
 	$categoria = $_GET['categoria'];
 	$seccion = $_GET['seccion'];
 	$login = $_GET['login'];
@@ -26,6 +26,8 @@
 		echo "<th>Descripcion</th>";
 		echo "<th>Precio</th>";
 		echo "<th>Fabricante</th>";
+		echo "<th>Comprar</th>";
+		echo "<th>Favoritos</th>";
 		echo "</tr>";
 		while ($fila = $resultado->fetch_object()) {
 
@@ -34,7 +36,7 @@
 			echo "<td>" . $fila->Descripcion; echo "</td>";
 			echo "<td>" .  $fila->Precio; echo "</td>";
 			echo "<td>" . $fila->Fabricante; echo "</td>";
-			echo "<td>" . "<a href='AnadirACarrito.php?producto=$fila->Codigo&login=$login&seccion=$seccion'><input
+			echo "<td>" . "<a href='añadircarrito.php?producto=$fila->Codigo&login=$login&seccion=$seccion'><input
 				type='button' value='Añadir a Carrito'> </a>"; echo "</td>";
 			echo "<td>" . "<a href='ScriptAnadirFavoritos.php?producto=$fila->Codigo&login=$login&seccion=$seccion'><input
 					type='button' value='Añadir a Favoritos'> </a>"; echo "</td>";
@@ -47,14 +49,14 @@
 		echo "       ";
 		echo "<a href='VerFavoritos.php?login=$login&seccion=$seccion'>Ver Favoritos</a>";
 		echo "       ";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 		echo "<br>";
 		echo "<a href='index.php'>Salir</a>";
 
 	}
 	else {
 		echo "<h1>Aún no existen productos de esta categoría</h1>";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 	}
 
 $mysqli->close();

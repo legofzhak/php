@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php
-	include_once ('Conexion.php');
+	include_once ('config.php');
 	$producto = $_GET['producto'];
 	$login = $_GET['login'];
 	$seccion = $_GET['seccion'];
@@ -21,11 +21,11 @@
 
 	if ($mysqli->affected_rows == 1){
 		echo "<h1>Producto eliminado con éxito</h1>";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 	}
 	else {
 		echo "<h1>Producto no eliminado</h1>";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a>";
 	}
 
 $mysqli->close();

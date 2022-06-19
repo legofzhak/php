@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php
-	include_once ('Conexion.php');
+	include_once ('config.php');
     $idCompras = $_GET['idCompras'];
     $nombreEmp = $_GET['nombreEmp'];
 	$mensaje = $_GET['mensaje'];

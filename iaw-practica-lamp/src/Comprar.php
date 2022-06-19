@@ -7,7 +7,7 @@
 </head>
 <body>
 	<?php
-	include_once ('Conexion.php');
+	include_once ('config.php');
 
 	$login = $_GET['login'];
 	$seccion = $_GET['seccion'];
@@ -75,7 +75,7 @@
 		echo "<td><input type='hidden' name='seccion' value=$seccion></td>";
  		echo "<input type='submit' value='Confirmar' />";
     	echo "</form>";
-		echo "<a href='Secciones.php?login=$login&seccion=$seccion'>Cancelar</a>";
+		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Cancelar</a>";
 
 	}
 	else 

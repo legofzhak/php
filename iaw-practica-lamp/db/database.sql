@@ -2,32 +2,19 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-CREATE DATABASE IF NOT EXISTS `lamp_db`;
-USE `lamp_db`;
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `AntonioGonzalezCapel`
---
-
--- --------------------------------------------------------
-
-GRANT ALL PRIVILEGES ON lamp_db.* TO 'lamp_user'@'%';
+DROP DATABASE IF EXISTS lamp_db;
+CREATE DATABASE lamp_db CHARACTER SET utf8mb4;
+USE lamp_db;
 
 --
 -- Estructura de tabla para la tabla `carrito`
 --
 
-
-
 CREATE TABLE `carrito` (
   `productos_Codigo` int(11) NOT NULL,
   `Cliente_login` varchar(50) NOT NULL,
   `cantidad` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 -- --------------------------------------------------------
 
@@ -39,7 +26,7 @@ CREATE TABLE `categorias` (
   `IdCategoria` int(11) NOT NULL,
   `IdSeccion` int(11) NOT NULL,
   `Nombre` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `categorias`
@@ -84,7 +71,7 @@ CREATE TABLE `cliente` (
   `nombre` varchar(50) DEFAULT NULL,
   `apellidos` varchar(50) DEFAULT NULL,
   `correo` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `cliente`
@@ -113,7 +100,7 @@ CREATE TABLE `compras` (
   `Cliente_login` varchar(50) NOT NULL,
   `Transportes_nombre` varchar(45) NOT NULL,
   `direccion_idDireccion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `compras`
@@ -184,7 +171,7 @@ CREATE TABLE `direccion` (
   `ciudad` varchar(45) DEFAULT NULL,
   `telefono` int(9) DEFAULT NULL,
   `Cliente_login` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `direccion`
@@ -207,7 +194,7 @@ CREATE TABLE `mensajeria` (
   `Transportes_nombre` varchar(45) NOT NULL,
   `mensaje` varchar(45) DEFAULT NULL,
   `Compras_idCompras` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `mensajeria`
@@ -242,7 +229,7 @@ INSERT INTO `mensajeria` (`Transportes_nombre`, `mensaje`, `Compras_idCompras`) 
 CREATE TABLE `objetivos` (
   `fecha` date DEFAULT NULL,
   `idSecciones` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `objetivos`
@@ -267,7 +254,7 @@ CREATE TABLE `productos` (
   `Fabricante` text DEFAULT NULL,
   `idCategoria` int(11) NOT NULL,
   `idProveedor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `productos`
@@ -411,7 +398,7 @@ CREATE TABLE `productoscompra` (
   `cantidad` int(11) DEFAULT NULL,
   `Compras_idCompras` int(11) NOT NULL,
   `devuelto` enum('devuelto','','pendiente') DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `productoscompra`
@@ -528,7 +515,7 @@ DELIMITER ;
 CREATE TABLE `productosfavoritos` (
   `Cliente_login` varchar(50) NOT NULL,
   `productos_Codigo` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `productosfavoritos`
@@ -550,7 +537,7 @@ CREATE TABLE `proveedores` (
   `Correo Electronico` text DEFAULT NULL,
   `Telefono` text DEFAULT NULL,
   `CIF` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `proveedores`
@@ -578,7 +565,7 @@ CREATE TABLE `saldoseccion` (
   `idSecciones` int(11) NOT NULL,
   `saldo` int(11) DEFAULT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `saldoseccion`
@@ -654,7 +641,7 @@ DELIMITER ;
 CREATE TABLE `saldotiendavirtual` (
   `saldo` int(11) NOT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `saldotiendavirtual`
@@ -672,7 +659,7 @@ INSERT INTO `saldotiendavirtual` (`saldo`, `fecha`) VALUES
 CREATE TABLE `secciones` (
   `IdSeccion` int(11) NOT NULL,
   `Nombre` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+);
 
 --
 -- Volcado de datos para la tabla `secciones`
@@ -698,7 +685,7 @@ CREATE TABLE `transportes` (
   `correo` varchar(45) DEFAULT NULL,
   `login` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `transportes`
@@ -899,7 +886,3 @@ ALTER TABLE `productosfavoritos`
 ALTER TABLE `saldoseccion`
   ADD CONSTRAINT `saldoseccion_ibfk_1` FOREIGN KEY (`idSecciones`) REFERENCES `secciones` (`IdSeccion`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

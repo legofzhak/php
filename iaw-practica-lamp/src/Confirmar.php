@@ -8,7 +8,7 @@
 <body>
 <?php
 
-include_once ('Conexion.php');
+include_once ('config.php');
 
 $seccion= $_GET['seccion'];
 $login = $_GET['login'];
@@ -54,7 +54,7 @@ $fecha = date('y-m-d');
 		echo "<h1>ERROR.</h1>";
 	}
 	echo "<form action='Comprar.php' method='get'>";
-	echo "<a href='Login.php'>Salir</a>";
+	echo "<a href='login.php'>Salir</a>";
 ?>
 </body>
 </html>
