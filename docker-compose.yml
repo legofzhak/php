@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.4'
 
 services:
   apache:
@@ -24,7 +24,7 @@ services:
     restart: always
     volumes:
       - mariadb_data:/var/lib/mysql
-      - ./iaw-practica-lamp/db:/docker-entrypoint-initdb.d
+      - ./db:/docker-entrypoint-initdb.d
     networks:
       - backend_network
     security_opt:
