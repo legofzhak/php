@@ -3,8 +3,6 @@ version: '3.4'
 services:
   apache:
     build: ./apache
-    ports:
-      - 80:80
     restart: always
     networks:
       - frontend_network
@@ -52,7 +50,7 @@ services:
       - apache
     restart: always 
     environment:
-    DOMAINS: 'php-zaka.ddns.net -> http://apache:80/ #production'
+        DOMAINS: 'php-zaka.ddns.net -> http://apache:80/ #production'
     volumes:
       - ssl_certs_data:/var/lib/https-portal
     depends_on:
