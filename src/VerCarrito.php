@@ -1,9 +1,9 @@
 <!DOCtype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<link href="homepage_style.css" type="text/css" rel="stylesheet"/>
-
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<link href="/css/carrito_style.css" type="text/css" rel="stylesheet"/>
+	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+	<title>Lista de Carrito</title>
 </head>
 <body>
 <?php
@@ -35,7 +35,7 @@ $cadenaSQL = "SELECT *
 			echo "<td>" . $fila->Nombre; echo "</td>";
 			echo "<td>" .  $fila->Precio; echo "</td>";
 			echo "<td>" . $fila->cantidad; echo "</td>";
-			echo "<td>" . "<a href='EliminarProductoCarrito.php?producto=$fila->Codigo&login=$login&seccion=$seccion'><input
+			echo "<td>" . "<a href='eliminarproducto.php?producto=$fila->Codigo&login=$login&seccion=$seccion'><input
 					type='button' value='Eliminar Producto'> </a>"; echo "</td>";
 
 			
@@ -44,7 +44,7 @@ $cadenaSQL = "SELECT *
 		}
 		echo "</table>";
 		echo "<br>";
-		echo "<a href='Comprar.php?login=$login&seccion=$seccion'>Comprar</a>";
+		echo "<a href='comprar.php?login=$login&seccion=$seccion'>Comprar</a>";
 		echo "       ";
 		echo "<a href='secciones.php?login=$login&seccion=$seccion'>Volver atrás</a><br/>";
 

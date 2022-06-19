@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-<link href="empresa_homepage_style.css" type="text/css" rel="stylesheet"/>
+<link href="/css/carrito_style.css" type="text/css" rel="stylesheet"/>
 <title>Enviar mensaje</title>
 </head>
 <body>
@@ -14,7 +14,7 @@ include_once ('config.php');
     $idCompras=$_GET['compra'];
 
 	echo "<h1>Escriba un mensaje al pedido ".$idCompras." y pulse enviar</h1>";
-	echo "<form action='ScriptEnviarMensaje.php' method='get'>";
+	echo "<form action='scriptenviarmensaje.php' method='get'>";
 	echo "<table style='margin-left:auto;margin-right:auto;'>";
   	echo		"<tr>";
 	echo		"<td>Mensaje:</td>";

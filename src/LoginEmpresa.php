@@ -1,15 +1,15 @@
 <!DOCtype html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<link href="empresa_homepage_style.css" type="text/css" rel="stylesheet"/>
+	<link href="/css/carrito_style.css" type="text/css" rel="stylesheet"/>
 
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 </head>
 <body>
     <?php
     include_once ('config.php');
-    $login  = $_POST['login'];
-    $password  = $_POST['password'];
+    $login  = $_POST['nombre'];
+    $password  = $_POST['pass'];
 
     $nomEmp = "SELECT nombre FROM transportes WHERE login='$login' AND password='$password'";
 
@@ -45,11 +45,11 @@
 			    echo "<td>" . $fila->idCompras; echo "</td>";
 			    echo "<td>" .  $fila->Cliente_login; echo "</td>";
 			    echo "<td>" . $fila->estado; echo "</td>";
-                echo "<td>" . "<a href='ScriptCompraEnviada.php?compra=$fila->idCompras&login=$login&password=$password'><input
+                echo "<td>" . "<a href='scriptcompraenviada.php?compra=$fila->idCompras&login=$login&password=$password'><input
 				type='button' value='Enviar compra'> </a>"; echo "</td>";
-                echo "<td>" . "<a href='ScriptCompraFinalizada.php?compra=$fila->idCompras&login=$login&password=$password'><input
+                echo "<td>" . "<a href='scriptcomprafinalizada.php?compra=$fila->idCompras&login=$login&password=$password'><input
 				type='button' value='Finalizar compra'> </a>"; echo "</td>";
-                echo "<td>" . "<a href='EnviarMensaje.php?compra=$fila->idCompras&nombreEmp=$nombreEmp'><input
+                echo "<td>" . "<a href='enviarmensaje.php?compra=$fila->idCompras&nombreEmp=$nombreEmp'><input
 				type='button' value='Mensaje'> </a>"; echo "</td>";
 			    echo "</tr>";
 
@@ -57,12 +57,12 @@
 		    echo "</table>";
 		    echo "<br>";
 
-            echo "<br><a href='PaginaLoginEmpresa.html'>Salir</a></br>";
+            echo "<br><a href='paginaloginempresa.php'>Salir</a></br>";
         }
         else
         {
             echo "Datos incorrectos";
-            echo "<br><a href='PaginaLoginEmpresa.html'>Salir</a></br>";
+            echo "<br><a href='paginaloginempresa.php'>Salir</a></br>";
         }
 
 

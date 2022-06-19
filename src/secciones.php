@@ -23,13 +23,13 @@
 
 		while ($fila = $resultado->fetch_object()) {
 			
-			echo "<td><h2>"."<a href = 'Categorias.php?categoria=$fila->IdCategoria&seccion=$seccion&login=$login'>" . $fila->Nombre . "</a></h2></td>";
+			echo "<td><h2>"."<a href = 'categorias.php?categoria=$fila->IdCategoria&seccion=$seccion&login=$login'>" . $fila->Nombre . "</a></h2></td>";
 		}
 			echo "</table>";
 		
-			echo "<a href='VerCarrito.php?login=$login&seccion=$seccion'>Ver Carrito</a>";
+			echo "<a href='vercarrito.php?login=$login&seccion=$seccion'>Ver Carrito</a>";
 			echo "       ";
-			echo "<a href='VerFavoritos.php?login=$login&seccion=$seccion'>Ver Favoritos</a>";
+			echo "<a href='verfavoritos.php?login=$login&seccion=$seccion'>Ver Favoritos</a>";
 			echo "<br>";
 			echo "<a href='login.php'>Salir</a>";
 
