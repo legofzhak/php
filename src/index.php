@@ -3,7 +3,7 @@
 	<head>
 		<link href="/css/index_style.css" type="text/css" rel="stylesheet"/>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<title> Tienda Virtual </title>
+		<title>  Tienda Virtual </title>
 	</head>
 	<body>
 		<section class="form-login">

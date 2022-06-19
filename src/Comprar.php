@@ -3,7 +3,7 @@
 		<head>
 			<link href="/css/categorias_style.css" type="text/css" rel="stylesheet"/>
 			<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-			<title>Comprar</title>
+			<title> Comprar </title>
 		</head>
 	<body>
 		<?php

@@ -3,7 +3,7 @@
 		<head>
 			<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 			<link href="/css/logeo_style.css" type="text/css" rel="stylesheet"/>
-			<title>Compra confirmada</title>
+			<title> Compra confirmada </title>
 		</head>
 	<body>
 		<?php

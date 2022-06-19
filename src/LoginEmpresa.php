@@ -2,8 +2,8 @@
 <html>
 <head>
 	<link href="/css/carrito_style.css" type="text/css" rel="stylesheet"/>
-
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>  Tienda Virtual </title>
 </head>
 <body>
     <?php

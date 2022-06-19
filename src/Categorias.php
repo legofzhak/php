@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 		<link href="/css/categorias_style.css" type="text/css" rel="stylesheet"/>
-		<title> Categorías </title>
+		<title> Categorías</title>
 	</head>
 <body>
 	<?php

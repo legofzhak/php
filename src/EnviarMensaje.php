@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 <link href="/css/carrito_style.css" type="text/css" rel="stylesheet"/>
-<title>Enviar mensaje</title>
+<title> Enviar mensaje</title>
 </head>
 <body>
 <?php

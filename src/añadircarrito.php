@@ -3,7 +3,7 @@
 		<head>
 			<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
 			<link href="/css/carrito_style.css" type="text/css" rel="stylesheet"/>
-			<title>Añadir a Carrito</title>
+			<title>Añade a Carrito</title>
 		</head>
 	<body>
 		<?php

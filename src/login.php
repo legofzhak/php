@@ -4,7 +4,7 @@
 	    <link href="/css/logeo_style.css" type="text/css" rel="stylesheet"/>
         <meta http-equiv="Content-type" content="text/html" >
         <meta charset="UTF-8">
-        <title> Tienda Virtual </title>
+        <title>  Tienda Virtual </title>
     </head>
 <body>
     <?php

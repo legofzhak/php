@@ -3,7 +3,7 @@
 <head>
 	<link href="/css/logeo_style.css" type="text/css" rel="stylesheet"/>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-	<title>Añadido a Favoritos</title>
+	<title>Añadido a Favoritos </title>
 </head>
 <body>
 	<?php
